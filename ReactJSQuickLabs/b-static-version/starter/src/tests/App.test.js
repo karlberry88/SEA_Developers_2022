@@ -4,9 +4,8 @@ import App from '../App';
 
 jest.mock("../Components/Header", () => () => <header id="mockHeader">Mock Header</header>);
 jest.mock("../Components/Footer", () => () => <footer id="mockFooter">Mock Footer</footer>);
-// Uncomment these tests when reviewing the tests for this component
-// jest.mock("../Components/AllTodos", () => () => <div id="mockAllTodos">Mock All Todos</div>);
-// jest.mock("../Components/AddEditTodo", () => () => <div id="mockAddEditTodo">Mock Add Edit Todos</div>);
+jest.mock("../Components/AllTodos", () => () => <div id="mockAllTodos">Mock All Todos</div>);
+jest.mock("../Components/AddEditTodo", () => () => <div id="mockAddEditTodo">Mock Add Edit Todos</div>);
 
 describe(`App component renders correctly`, () => {
   let testRenderer;
@@ -30,15 +29,12 @@ describe(`App component renders correctly`, () => {
     expect(testInstance.findByProps({ id: 'mockFooter' })).toBeTruthy();
   });
 
-  // it(`renders an AllTodos component`, () => {
-  //   expect(testInstance.findByProps({ id: `mockAllTodos` })).toBeTruthy();
-  // });
+  it(`renders an AllTodos component`, () => {
+    expect(testInstance.findByProps({ id: `mockAllTodos` })).toBeTruthy();
+  });
 
-  // it(`renders an AddEditTodo component`, () => {
-  //   expect(testInstance.findByProps({ id: `mockAddEditTodo` })).toBeTruthy();
-  // });
+  it(`renders an AddEditTodo component`, () => {
+    expect(testInstance.findByProps({ id: `mockAddEditTodo` })).toBeTruthy();
+  });
 });
-
-
-
 
